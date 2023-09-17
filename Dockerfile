@@ -7,4 +7,4 @@ WORKDIR /home/container
 COPY BeamMP-Server /BeamMP-Server
 COPY entrypoint.sh /entrypoint.sh
 
-CMD ["/bin/bash" "/entrypoint.sh"]
+CMD ["/bin/bash", "/entrypoint.sh"]
