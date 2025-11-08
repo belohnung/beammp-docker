@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 RUN useradd -ms /bin/bash container
 ENV USER=container HOME=/home/container
@@ -12,7 +12,7 @@ RUN apt update -yyq && \
 RUN REPO_URL="https://github.com/BeamMP/BeamMP-Server" && \
     RELEASE_URL="$REPO_URL/releases/latest" && \
     LATEST_TAG=$(curl -sSLI -o /dev/null -w %{url_effective} "$RELEASE_URL" | awk -F'/' '{print $(NF)}') && \
-    DOWNLOAD_URL="$REPO_URL/releases/download/$LATEST_TAG/BeamMP-Server.debian.11.x86_64" && \
+    DOWNLOAD_URL="$REPO_URL/releases/download/$LATEST_TAG/BeamMP-Server.ubuntu.24.04.x86_64" && \
     curl -fL "$DOWNLOAD_URL" -o /home/container/BeamMP-Server && \
     chmod +x /home/container/BeamMP-Server
 
